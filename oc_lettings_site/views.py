@@ -11,4 +11,3 @@ from django.shortcuts import render
 #     return render(request, 'index.html')
 def home(request):
     return render(request, 'oc_lettings_site/home.html')
-

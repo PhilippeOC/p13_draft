@@ -16,7 +16,38 @@ jobs:
           name: run tests
           command: pytest
 
+
+
+orbs:
+  heroku: circleci/heroku@1.2.6
+
+
+
 workflows:
-  test-and-lint-workflow:
+  build-and-test-workflow:
     jobs:
       - test-and-lint
+          # filters:
+          #   branches:
+          #     ignore:
+          #       - main
+      
+  
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git:
+          filters:
+            branches:
+              only:
+                - main
+
+# workflows:
+#   test-and-lint-workflow:
+#     jobs:
+#       - test-and-lint:
+#           filters:
+#               branches:
+#                 ignore:
+#                   - main
+#                 # only:
+#                 #   - dev

@@ -38,7 +38,7 @@ orbs:
 
 
 workflows:
-  build-and-test-workflow:
+  build-test-deploy-workflow:
     jobs:
       - test-and-lint
 
@@ -50,12 +50,12 @@ workflows:
           requires:
             - test-and-lint
   
-  heroku_deploy:
-    jobs:
+  # heroku_deploy:
+  #   jobs:
       - heroku/deploy-via-git:
           filters:
             branches:
               only:
                 - main
           requires:
-            - build-and-test-workflow
+            - build-and-push-to-dockerhub

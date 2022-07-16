@@ -33,7 +33,7 @@ def test_lettings():
         address=address)
     path = reverse('letting', kwargs={'letting_id': 1})
     response = client.get(path)
-    expected_value = "Résidence Jules Verne"
+    expected_value = "<title>Résidence Jules Verne</title>"
     assert expected_value in response.content.decode()
     assert response.status_code == 200
     assertTemplateUsed(response, "lettings/letting.html")

@@ -18,7 +18,6 @@ DEBUG = env.bool('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(' ')
 
-print('**********', DEBUG)
 # Application definition
 
 INSTALLED_APPS = [
@@ -134,8 +133,8 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # # Add these new lines
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

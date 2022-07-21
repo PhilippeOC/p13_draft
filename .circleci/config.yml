@@ -49,9 +49,7 @@ workflows:
                 - main
           requires:
             - test-and-lint
-  
-  # heroku_deploy:
-  #   jobs:
+
       - heroku/deploy-via-git:
           filters:
             branches:

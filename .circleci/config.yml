@@ -19,6 +19,10 @@ jobs:
   build-and-push-to-dockerhub:
     docker:
       - image: cimg/go:1.17
+        environment:
+          DJANGO_ALLOWED_HOSTS: $DJANGO_ALLOWED_HOSTS
+          DJANGO_DEBUG: $DJANGO_DEBUG
+          DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY
     steps:
       - checkout
       - setup_remote_docker:

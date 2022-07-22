@@ -20,7 +20,7 @@ jobs:
     docker:
       - image: cimg/go:1.17
         auth:
-          username: mydockerhub-user
+          username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
         # environment:
         #   DJANGO_ALLOWED_HOSTS: $DJANGO_ALLOWED_HOSTS

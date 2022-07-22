@@ -29,11 +29,11 @@ jobs:
           version: 20.10.14
           docker_layer_caching: true
 
-      - run:
-          command: |
-            echo $DJANGO_ALLOWED_HOSTS
-            echo $DJANGO_DEBUG
-            echo $DJANGO_SECRET_KEY
+      # - run:
+      #     command: |
+      #       echo $DJANGO_ALLOWED_HOSTS
+      #       echo $DJANGO_DEBUG
+      #       echo $DJANGO_SECRET_KEY
 
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM

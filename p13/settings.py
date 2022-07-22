@@ -18,6 +18,9 @@ DEBUG = env.bool('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(' ')
 
+print('secret', SECRET_KEY)
+print('debug', DEBUG)
+print('hosts', ALLOWED_HOSTS)
 # Application definition
 
 INSTALLED_APPS = [
